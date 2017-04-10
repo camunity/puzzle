@@ -7,10 +7,12 @@ const AddToPuzzleNav = StackNavigator({
     screen: AddPhotosView,
     navigationOptions: {
       header: {
-        title: 'Add to Your Puzzle!'
+		visible: false
       }
     }
   }
+}, {
+  headerMode: 'screen'
 });
 
 //   SecondScreen: {

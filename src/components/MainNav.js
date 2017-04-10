@@ -10,6 +10,7 @@ const MainNav = TabNavigator({
   AddToPuzzle: {
     screen: AddToPuzzleNav,
     navigationOptions: {
+      header: { visible: false },
       tabBar: {
         visible: false,
         label: 'Camera',
@@ -32,6 +33,7 @@ const MainNav = TabNavigator({
 },
 // Tab bar customization:
 {
+  headerMode: 'screen',
   swipeEnabled: true,
   tabBarComponent: Platform.select({ android: TabView.TabBarTop, ios: TabView.TabBarBottom }),
   tabBarPosition: 'top',
