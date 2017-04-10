@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import PuzzleNav from './components/PuzzleNav';
+import MainNav from './components/MainNav';
 
 class App extends Component {
 
 	render() {
 		return (
-			<PuzzleNav />
+			<MainNav />
 	
 		);
 	}

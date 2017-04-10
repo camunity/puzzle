@@ -1,42 +1,27 @@
-import { TabNavigator, TabView } from 'react-navigation';
+import { StackNavigator } from 'react-navigation';
+import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Platform } from 'react-native';
-import React from 'react';
-import AddToPuzzleNav from './AddToPuzzleNav';
-import PuzzleBoardNav from './PuzzleBoardNav';
+import PuzzleBoard from './PuzzleBoard';
+import PhotoDetailScreen from './PhotoDetailScreen';
 
-const PuzzleNav = TabNavigator({
-  AddToPuzzle: {
-    screen: AddToPuzzleNav,
-    navigationOptions: {
-      tabBar: {
-        label: 'Add',
-        icon: <Icon name='plus' size={20} style={{ color: 'black' }} />
-      }
-    }
-  },
+const PuzzleNav = StackNavigator({
 
-  PuzzleBoard: {
-    screen: PuzzleBoardNav,
-    navigationOptions: {
-      tabBar: {
-        visible: true,
-        label: 'Puzzle',
-        icon: <Icon name='puzzle-piece' size={20} style={{ color: 'black' }} />
-    }
+PuzzleBoard: {
+  screen: PuzzleBoard,
+  navigationOptions: {
+      header: { visible: false }
   }
-}
 },
-// Tab bar customization:
-{
-  swipeEnabled: true,
-  tabBarComponent: Platform.select({ android: TabView.TabBarTop, ios: TabView.TabBarBottom }),
-  tabBarPosition: 'bottom',
-  tabBarOptions: {
-    indicator: { backgroundColor: 'white' },
-    showIcon: true,
-    showLabel: Platform.select({ android: false, ios: true }),
+PhotoDetailScreen: {
+    screen: PhotoDetailScreen,
+    navigationOptions: {
+
   }
+},
+},
+{
+      headerMode: 'screen',
 });
 
 export default PuzzleNav;

@@ -3,7 +3,6 @@ import { Text, View } from 'react-native';
 
 class PuzzleBoard extends Component {
 
-
 	render() {
 		return (
 			<View>
